@@ -4,6 +4,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,9 +22,18 @@ public final class Joke {
 	public String getIdentifier() {
 		return identifier;
 	}
+	public void setIdentifier(String identifier) {this.identifier = identifier; }
 
 	public String getContent() {
 		return content;
+	}
+	public void setContent(String content) { this.content = content; }
+	public String[] getRubrics() { return rubrics.toArray(new String[0]); }
+	public void setRubrics(String[] rubrics) {
+		this.rubrics = null;
+		for (String rubric : rubrics){
+			this.rubrics.add((rubric));
+		}
 	}
 
 	@Override
